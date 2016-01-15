@@ -1,0 +1,20 @@
+<h4>Storage Locations</h4>
+<table class="table table-striped table-bordered table-condensed table-hover token-list">
+	<thead>
+	<tr>
+		<th>Content</th>
+        <th>Location</th>
+        <th>Range</th>
+        <th>Section</th>
+        <th>Shelf</th>
+        <th>Extent</th>
+    </tr>    
+    </thead>
+    <tbody>
+  <% instances.each_with_index do | instance, index | %> 
+      	<% if instance["container"] and instance["container"].length > 0 %>
+            <%= render_aspace_partial :partial => "container/show_table_row", :locals => { :container => instance["container"], :id => "instance_#{index}_container" } %>
+  		<% end %>	  
+   <% end %>
+   </tbody>
+</table>

@@ -1,0 +1,24 @@
+  <tr>
+    <td><%= container["indicator_1"] %></td>    
+    <% if container["container_locations"].length > 0 %>
+       <% container["container_locations"].each_with_index do |container_location, index| %>
+       		<% if container_location['_resolved'] %>
+        		<td><%= container_location['_resolved']['building'] %>
+        		<% if container_location['_resolved']['floor'] %>
+        			&nbsp;<%= container_location['_resolved']['floor'] %>
+        		<% end %>
+        		<% if container_location['_resolved']['room'] %>
+        			<%= container_location['_resolved']['room'] %>
+        		<% end %>
+        		<% if container_location['_resolved']['area'] %>
+        			, <%= container_location['_resolved']['area'] %>
+        		<% end %>
+        		</td>
+        		<td><%= container_location['_resolved']['coordinate_1_indicator'] %></td>
+        		<td><%= container_location['_resolved']['coordinate_2_indicator'] %></td>
+        		<td><%= container_location['_resolved']['coordinate_3_indicator'] %></td>        	
+      		<% end %>      
+    	<% end %>
+    <% end %>
+    <td><%= container["container_extent"] %> <%= container["container_extent_type"] %></td>
+  </tr>
