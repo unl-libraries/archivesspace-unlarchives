@@ -1,0 +1,52 @@
+<% set_title I18n.t("brand.home") %>
+
+<br/>
+
+<div class="well">
+  <div class="row-fluid">
+    
+    <div class="span8">
+      
+      <h3><%= I18n.t("brand.welcome_message") %></h3>
+      <p>
+      This database provides descriptions of collections housed by the Archives and Special Collections, University of Nebraska-Lincoln Libraries. 
+      These records include the archives of the University, manuscripts, personal papers, photographs and more. 
+      This database, like our collections, is a continually expanding work in progress, and it is updated with new information regularly. 
+      You can access the information in the database by browsing the collections or by searching with the keywords of your choice.
+	</p>
+	<h4>Default Behaviors</h4>
+	 The search engine looks for records containing every term you submit.
+	 <h4>Search By Phrase</h4>
+     Use double quotes around your search query. (e.g "Festival of Contemporary Arts")
+	<h4>Narrow Your Search Results</h4>
+        <ul>
+        <li>Use a minus sign before a term you want to omit from your results. (e.g. 'bass -fish' finds bass guitars but not bass fishing.)</li>
+        <li>Browse by collection title, subject, name, or classification.</li>
+
+      
+      <p><%= I18n.t("brand.welcome_search_label") %></p>
+
+      <div class="tab-content">
+        <div id="simpleSearch" class="tab-pane active">
+          <%= render_aspace_partial :partial => "simple_search" %>
+        </div>
+        <div id="advancedSearch" class="tab-pane">
+          <%= render_aspace_partial :partial => "advanced_search" %>
+        </div>
+      </div>
+
+      <ul class="search-switcher">
+        <li class="active">
+          <a href="#simpleSearch" data-toggle="tab"><%= I18n.t("actions.hide_advanced_search") %></a>
+        </li>
+        <li>
+          <a href="#advancedSearch" data-toggle="tab"><%= I18n.t("actions.show_advanced_search") %></a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="span4">
+
+    </div>
+  </div>
+</div>
