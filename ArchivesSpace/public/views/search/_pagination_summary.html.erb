@@ -43,7 +43,8 @@
             </ul>
           </li>
         <% end %>
-        <% unless @search_data.sort_fields.include?('identifier') || @search_data.sort_fields.include?('digital_object_id')%>
+        <% ## this section was necessary to add the identifier to the filtered search results
+        	unless @search_data.sort_fields.include?('identifier') || @search_data.sort_fields.include?('digital_object_id')%>
         	<li class="dropdown-submenu pull-left">
             <%= link_to "Identifier", params_for_search("sort" => @search_data.sort_filter_for('identifier', "desc")) %>
             <ul class="dropdown-menu">
